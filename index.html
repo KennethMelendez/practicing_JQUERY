@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script>
+
+//Practicing jquery
+
+/*
+
+src: https://www.w3schools.com/jquery/jquery_syntax.asp
+
+This is a document ready event that prevents any
+JQuery from running before the document is finished
+
+The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).
+
+Basic syntax is: $(selector).action()
+
+A $ sign to define/access jQuery
+A (selector) to "query (or find)" HTML elements
+A jQuery action() to be performed on the element(s)
+
+$(this).hide() - hides current element.
+
+$("p").hide() - hides all the <p> elements
+
+$(".test").hide - hides all the elements with class ="test"
+
+$("#test").hide() - hides the element with id = "test"
+
+*/
+$(document).ready(function(){
+
+  //JQuery methods go here
+
+});
+
+/*=====================================================
+    COLORS
+=====================================================*/
+
+var colors = ["pink","black","tomato"];
+
+
+
+
+//document ready event
+$(document).ready(function(){
+  //button click event
+  $("button").click(function(){
+    //getting the p element and hiding it when clicked
+    $("p").hide();
+
+  });
+});
+
+//var color = 0;
+$(document).ready(function(){
+
+  var index = 0;
+  $("html").click(function(){
+    if (index >= colors.length ){
+      index = 0; // reset back to first color
+    }
+
+$("html").css("background-color", colors[index]);
+  index++;
+  console.log(index); //logging the clicks count per background
+  });
+});
+
+
+</script>
+</head>
+<body>
+
+<h1> 龴ↀ◡ↀ龴 </h1>
+
+<h2>Hello World!</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<p>Click background to change color.</p>
+
+<p> this is a word </p>
+
+<button>Click me to hide paragraphs</button>
+
+
+
+</body>
+</html>
