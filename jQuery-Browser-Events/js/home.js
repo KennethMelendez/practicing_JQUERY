@@ -51,15 +51,17 @@ let paragraphButtons = [
 hideContent();
 hideContent();
 buttonClick();
+hoverTable();
 activateParagraphButtons();
+
+
 
 function activateParagraphButtons() {
   for (let content = 0; content < paragraphButtons.length; content++) {
     let currentButton = paragraphButtons[content];
     let currentContent = paragraphContent[content];
-    togglesParagraphButtons(currentButton,currentContent);
+    togglesParagraphButtons(currentButton, currentContent);
   }
-
 }
 
 
@@ -95,3 +97,17 @@ function buttonClick() {
     }
   }
 }
+
+function hoverTable() {
+
+  $("td").hover(function () {
+    $(this).css("background-color", "WhiteSmoke");
+  }, function () {
+    $(this).css("background-color", "white");
+  });
+
+}
+
+
+
+
