@@ -1,9 +1,10 @@
 //Bug using booleans so created an integer for button presses
-let buttonPressed = 0;
+let buttonPressed = 1;
 
 //ARRAY OF CONTENT
 let hiddenContent = [
-                     "#akronWeather",
+                     "#mainInfoDiv",
+                     "#akronInfoDiv",
                      "#minneapolisInfoDiv",
                      "#minneapolisWeather",
                      "#louisvilleInfoDiv",
@@ -11,6 +12,7 @@ let hiddenContent = [
                     ];
 //ARRAY OF BUTTONS
 let buttons = [
+                     "#mainButton",
                      "#akronButton",
                      "#minneapolisButton",
                      "#minneapolisWeather",
@@ -19,31 +21,41 @@ let buttons = [
                     ];
 
 
-buttonClickEvent();
+hideContent();
 
-
-
-function buttonClickEvent(){
 
 $(document).ready(function(){
+$("#mainInfoDiv").show();
+});
 
+
+function hideContent(){
 for(let x = 0; x < hiddenContent.length;x++){
   $(hiddenContent[x]).hide();
   console.log(hiddenContent[x]);
-
-
-  $(buttons[x]).on("click",function(){
-    if(buttonPressed === 0){
-      $(hiddenContent[x]).show();
-      buttonPressed++;
-      console.log(buttonPressed);
-
-    } else if (buttonPressed === 1){
-      $(hiddenContent[x]).hide();
-      buttonPressed--;
-      console.log(buttonPressed);
-    }
-    });
   } // end of for loop
-}); //end of ready function
+}
+
+hideContent();
+buttonClick();
+
+function buttonClick(){
+
+
+for(let showContent = 0; showContent < hiddenContent.length;showContent++){
+  for(let hideContent = 0; hideContent < hiddenContent.length; hideContent++){
+  $(buttons[showContent]).on("click",function(){
+
+
+        $(hiddenContent[hideContent]).hide();
+        $(hiddenContent[showContent]).show();
+
+
+  });
+}
+}
+
+
+
+
 }
